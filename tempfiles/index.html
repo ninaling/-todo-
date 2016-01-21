@@ -25,32 +25,40 @@
             <script src="todo.js"></script>
             <script src="todo-controller.js"></script>
             <script src="todo-model.js"></script>
+            <script src="todo-controller-t.js"></script>
+            <script src="todo-model-t.js"></script>
             <script src="add-item-form.js"></script>
     </head>
 
     <body ng-controller='todoController' ng-cloak>
-        <div>
+        
             <h1 style="font-weight:300">//TODO:</h1>  
 
-            <ul style="list-style-type:none">
-                <li ng-repeat='day in getWeek()' style="display:inline-block; width:18vw; font-size:1.5vmax; padding:5px; valign:top">
-                    {{ day.dayOfWeek }}
-                    <ul style="list-style-type:none">
-                        <li ng-repeat='item in getItems(day)' style="text-indent:-1em; font-size:1.2vmax">
-                            {{ item }}
-                            <span class="remove" ng-click="removeItem(day, item)">&times</span>
-                        </li>
-                    
-                    </ul>
-                    <p ng-click='addItem(day, newItem)' style='display:inline' class="add">+</p>
-                    <input type='text' ng-model='newItem' name='newItem' id='newItem'/>
-                
-                </li>
-            
-            
+        <div>
+            <ul>
+            <li ng-repeat='item in getItems()'>{{ item }} <span class="remove" ng-click="removeItem(item)">&times</span></li>
             </ul>
+            <add-item-form></add-item-form>
+
         </div>
         
+        <div>
+            <ul>
+            <li ng-repeat='item in getItemsT()'>{{ item }} <span class="remove" ng-click="removeItemT(item)">&times</span></li>
+            </ul>
+            <add-item-form></add-item-form>
+
+        </div>
+<!--
+        <div ng-controller='todoControllerT'>
+            <h1 style="font-weight:300">//TODO:</h1>  
+            <ul>
+            <li ng-repeat='item in getItems()'>{{ item }} <span class="remove" ng-click="removeItem(item)">&times</span></li>
+            </ul>
+            <add-item-form></add-item-form>
+
+        </div>
+-->
     </body>
 
 </html>

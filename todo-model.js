@@ -1,25 +1,65 @@
 (function(){
     function todoModel(){
-        this._items=[
-                 'Ralph\'s run',
-                 'buy a dog',
-                 'crush CS35'
-                ];
         var self=this;
-        this.getItems=function(){
-            return self._items;
+        
+        var mon={
+                dayOfWeek: 'mon',
+                items: [ 'go to Ralph\'s', 'buy a dog' ]
+            };
+        
+        var tue={
+                dayOfWeek: 'tue',
+                items: [ 'procrastinate', 'watch netflix alone' ]
+            };
+        
+        var wed={
+                dayOfWeek: 'wed',
+                items: [ 'browse 9gag', 'mid-week crisis', 'two math problems' ]
+            };
+        
+        var thurs={
+                dayOfWeek: 'thurs',
+                items: [ 'binge-watch pewdiepie', 'not get turnt' ]
+            };
+        
+        var fri={
+                dayOfWeek: 'fri',
+                items: [ 'cry about CS35L', 'cry some more' ]
+            };
+        
+        var sat={
+                dayOfWeek: 'sat',
+                items: [ 'submit CS35L late', 'cry' ]
+            };
+        
+        var sun={
+                dayOfWeek: 'sun',
+                items: [ 'sleep' ]
+            };
+        
+        this.week=[
+                        mon, tue, wed, thurs, fri, sat, sun
+                ];
+        
+        this.getWeek=function(){
+            return self.week;   
         }
-        this.addItem=function(item){
+        this.getItems=function(day){
+            
+            return day.items;
+        }
+        this.addItem=function(day, item){
             if(!item){return;};
-            self._items.push(item);
+            day.items.push(item);
         }
-        this.removeItem=function(item){
-            var index=self._items.indexOf(item);
+        this.removeItem=function(day, item){
+            var index=day.items.indexOf(item);
             if(index >=0){
-            self._items.splice(index,1);
+            day.items.splice(index,1);
             }
         }
     };
         angular.module('todoApp')
         .service('todoModel', todoModel);
 })();
+
