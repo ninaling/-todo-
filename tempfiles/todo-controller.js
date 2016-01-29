@@ -1,10 +1,5 @@
 (function(){
-    function todoController($scope, todoModel){ //$scope object automatically passed in by program, but must take as argument
-//        _items=[
-//                 'Ralph\'s run',
-//                 'buy a dog',
-//                 'crush CS35'
-//                ];
+    function todoController($scope, todoModel){ 
    
 	$scope.getItems=todoModel.getItems;
     $scope.addItems=todoModel.addItems;
@@ -14,13 +9,6 @@
     $scope.addItemsT=todoModel.addItemsT;
 	$scope.removeItemT=todoModel.removeItemT;
         
-//    $scope.getItemsW=todoModel.getItemsW;
-//	$scope.removeItemW=todoModel.removeItemW;
-//        
-//    $scope.getItems=todoModel.getItems;
-//	$scope.removeItem=todoModel.removeItem;
-//    $scope.getItems=todoModel.getItems;
-//	$scope.removeItem=todoModel.removeItem;
     }
     angular.module('todoApp')
 	.controller('todoController', 

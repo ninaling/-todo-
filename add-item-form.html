@@ -1,7 +1,8 @@
 
-<form>
-    <p ng-click='addItem(newItem)' style='display:inline' class="add">+</p>
-    <input type='text' ng-model='newItem' name='newItem' id='newItem'/>
+<form class="add-form" ng-submit='addItem(day, newItem)'>
+    <a class="add">+</a>
+
+    <input type='text' ng-model='newItem' name='newItem' id='newItem' class="input-field"/>
 </form>
 <style>
     .add{

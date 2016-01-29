@@ -1,7 +1,7 @@
 (function(){
     function addItemForm(todoModel){
             var linkFn=function($scope){
-                $scope.addItem=function(item){
+                $scope.addItem=function(item){ //can use functions implemented in todomodel
                 todoModel.addItem(item);
                 $scope.newItem='';
             }
@@ -15,6 +15,6 @@
         };
     };
     angular.module('todoApp')
-	.directive('addItemForm', ['todoModel', addItemForm]);
+	.directive('addItemForm', ['todoModel', addItemForm]); //because added as dependency
 
 })();
