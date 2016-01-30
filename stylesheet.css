@@ -5,25 +5,32 @@
     font-family:'Courier';
 }
 
-.modify{
+.modify, .add-prompt, .add{
+    color: black;
     opacity:0.3;
 }
-.modify:hover {
+.modify, .add-prompt, .add:hover {
     cursor:pointer;
-    opacity:0.6;
+    opacity:0.4;
+}
+
+#container {
+    margin-top: 5vh;
+    margin-left: 1vw;
 }
 
 .day {
     display:inline-block; 
     position: relative;
     vertical-align:text-top; 
-    height:40vh; 
+    min-height:35vh; 
     overflow-y: scroll;
     width:20vw; 
     font-size:1.5vmax; 
-    padding:5px; 
+    margin:1vw; 
+    padding: 1vw;
     margin: none;
-    border-top: 2px solid black;   
+/*    border-top: 2px solid black;   */
 }
 
 .day-items {
@@ -33,12 +40,8 @@
 
 .item {
     text-indent:-1em; 
-    font-size:1.2vmax;   
-}
-
-.form-wrapper{
-    position: absolute;
-    bottom:10px;
+    font-size:1.2vmax;  
+    position: relative;
 }
 
 .add-form {
@@ -52,11 +55,11 @@
 .input-field {
     border: 0;
     outline: 0;
-    border-bottom: 2px solid darkgray;
+    border-bottom: 2px solid lightgray;
 }
 
 .input-field:focus {
     border: 0;
     outline: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid darkgray;
 }
